@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F0RT1ND HQ</title>
+    <style>
+        /* General Styles */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp7454571.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+            cursor: url('https://files.catbox.moe/3gftru.cur'), auto;
+            transition: background 0.3s ease;
+        }
+
+        /* Build info in top left */
+        #build {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Title Styles */
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Button Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(1);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Button focus effect */
+        button:focus {
+            outline: none;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+        }
+
+        /* Hover effect on body */
+        body:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="build">Build: 192848.37491.29713-hq</div>
+
+    <h1>Welcome to F0RT1ND HQ</h1>
+
+    <div class="container">
+        <button onclick="window.location.href='https://www.fort1nd.com'">Latest</button>
+        <button onclick="window.location.href='https://sites.google.com/view/oldfortbackup/homemenu'">2024.4</button>
+        <button onclick="openDLC(event)">2022.1 (DLC)</button>
+    </div>
+
+    <script>
+        function openDLC(event) {
+            if (event.shiftKey) {
+                // Open file dialog when shift is held
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.mhtml';
+                input.onchange = function (e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (fileEvent) {
+                            const newTab = window.open();
+                            newTab.document.write(fileEvent.target.result);
+                        };
+                        reader.readAsText(file);
+                    }
+                };
+                input.click();
+            } else {
+                // Default URL for DLC
+                window.open('https://www.google.com/url?q=https%3A%2F%2Fvt0gr-my.sharepoint.com%2F%3Af%3A%2Fg%2Fpersonal%2Fsoomaln02_fort1nd_com%2FElhQLDtN3TVIvBJwIIYEbi0BhXDPP-aNBt0hCQICSxCM1Q%3Fe%3DBA8lXX&sa=D&sntz=1&usg=AOvVaw39NRdGHRbUUpJ7O6z7FL8S', '_blank');
+            }
+        }
+    </script>
+
+</body>
+</html>
